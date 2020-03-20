@@ -1,0 +1,65 @@
+:root {
+    --title-height: 50px;
+    --field-width: 300px;
+    --cell-width: 100px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+}
+
+.tic-toe-header {
+    height: var(--title-height);
+    background-color: black;
+    color: white;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tic-toe-title {
+    text-align: center;
+}
+
+.container {
+    max-width: 960px;
+    height: calc(100vh - var(--title-height));
+    margin: 0 auto;
+    background-color:violet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.battle-field {
+    width: var(--field-width);
+    height: var(--field-width);
+    background-color: #b85a2b;
+    display: grid;
+    grid-template-rows: 100px; 
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.battle-field__cell {
+    background-color: #b85a2b;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.battle-field__cell:hover {
+    background-color: #fb8143;
+}
+.winner {
+    color: red;
+    font-size: 20px;
+}
