@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tic toe</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js" defer></script>
 </head>
 <body>
-    <header class="tic-toe-header">
-        <h1 class="tic-toe-title">Tic toe</h1>
-    </header>
-    <div class="container">
-        <div class="title"></div>
-        <div class="battle-field" id="board"></div>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="header__title">Tic Tac Toe</h1>
+        </header>
+        <div class="container">
+            <h2 class="container__title">
+                <span>Winner:</span>
+                <span class="outcome" id='result'></span>
+            </h2>
+            <div class="battle-field" id="board"></div>
+            <button class="btn btn-reset">Reset</button>
+        </div>
+        <footer class="footer">
+            <p class="footer__desc">This game was created by Kanstantsyn Melnik</p>
+        </footer>
     </div>
 </body>
 </html>

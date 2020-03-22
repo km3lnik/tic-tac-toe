@@ -2,39 +2,61 @@
     --title-height: 50px;
     --field-width: 300px;
     --cell-width: 100px;
+    --main-background: #111111;
 }
 
 * {
     box-sizing: border-box;
 }
 
+html, 
 body {
-    margin: 0px;
+    height: 100%;
 }
 
-.tic-toe-header {
-    height: var(--title-height);
-    background-color: black;
+body {
+    margin: 0;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.header {
+    background-color: var(--main-background);
     color: white;
     margin: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 1 auto;
 }
 
-.tic-toe-title {
+.header__title {
     text-align: center;
 }
 
 .container {
-    max-width: 960px;
-    height: calc(100vh - var(--title-height));
+    width: 100%;
     margin: 0 auto;
-    background-color:violet;
+    background-color: #546546;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1 1 auto;
+}
+
+.container__title {
+    visibility: hidden;
+}
+
+.container__title--active {
+    visibility: visible;
 }
 
 .battle-field {
@@ -44,22 +66,56 @@ body {
     display: grid;
     grid-template-rows: 100px; 
     grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0px 0px 10px #000000;
 }
 
 .battle-field__cell {
-    background-color: #b85a2b;
-    border: 1px solid black;
+    height: var(--cell-width);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.5rem;
+    background-color: #772c06;
+    border: 1px solid #000000;
+    text-shadow: 1px 1px 2px #000000;
+    box-shadow: inset 0px 0px 4px #000000;
     cursor: pointer;
     transition: 0.3s all;
 }
 
 .battle-field__cell:hover {
-    background-color: #fb8143;
+    background-color: #c85922;
 }
-.winner {
-    color: red;
-    font-size: 20px;
+
+.btn-reset {
+    font-size: 1.5rem;
+    background: #111111;
+    color: #bb5f09;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px #000;
+    transition: 0.3s all;
+}
+
+.btn-reset:hover {
+    background: #222222;
+    color: #f3811e;
+}
+
+.footer {
+    background-color: var(--main-background);
+    color: #9e9898;
+    text-align: center;
+    font-size: 1.5rem;
+    flex: 0 1 auto;
+}
+
+.outcome {
+    color: #c80909;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: uppercase;
 }
